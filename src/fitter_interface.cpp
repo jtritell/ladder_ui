@@ -7,12 +7,14 @@
 #include "rviz/yaml_config_reader.h"
 
 #include <ros/ros.h>
+#include <ros/package.h>
 #include <std_msgs/String.h>
 #include <std_msgs/Int32.h>
 #include <teleop_msgs/RateControl.h>
 #include <ladder_shaper/LadderState.h>
 
 #include "fitter_interface.h"
+#include <stdio.h>
 
 void FitterInterface::updateParameters(const ladder_shaper::LadderState::ConstPtr& msg){
     //msg->data;
@@ -42,7 +44,11 @@ FitterInterface::FitterInterface(QWidget *parent) :
     //load the configuration
     rviz::YamlConfigReader reader;
     rviz::Config config;
-    reader.readFile( config, "/home/jordan/.rviz/robot_view.rviz");
+    //    reader.readFile( config, "/home/jordan/.rviz/robot_view.rviz");
+    std::string path = ros::package::getPath("ladder_ui");
+    path += "/robot_view.rviz";
+    std::cout<<path<<std::endl;
+    reader.readFile(config, path.c_str());
     //  reader.readFile( config, "front_view.rviz");
     if(reader.error())
       std::cout<<"ERROR reading config\n";

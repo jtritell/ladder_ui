@@ -6,15 +6,15 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Mo
 
 cmake_minimum_required(VERSION 2.8.3)
 project(ladder_ui)
-find_package(catkin REQUIRED COMPONENTS rviz roscpp)
-catkin_package()
+find_package(catkin REQUIRED COMPONENTS rviz roscpp roslib teleop_msgs)
+catkin_package(CATKIN_DEPENDS rviz roscpp roslib teleop_msgs)
 include_directories(${catkin_INCLUDE_DIRS})
 link_directories(${catkin_LIBRARY_DIRS})
 
-find_package(YamlCpp REQUIRED)
-include(${YAMLCPP_INCLUDE_DIR})
+#find_package(YamlCpp REQUIRED)
+#include(${YAMLCPP_INCLUDE_DIR})
 include_directories(${catkin_INCLUDE_DIRS} ${YAMLCPP_INCLUDE_DIR})
-set(LIBS ${LIBS} ${YAMLCPP_LIBRARY})
+#set(LIBS ${LIBS} ${YAMLCPP_LIBRARY})
 
 ## This plugin includes Qt widgets, so we must include Qt like so:
 find_package(Qt4 COMPONENTS QtCore QtGui REQUIRED)
@@ -39,7 +39,7 @@ QT4_WRAP_UI(QT_FORMS_HPP ${QT_FORMS})
 set(SOURCE_FILES
   src/fitter_interface.cpp
   src/main.cpp
-  front_view.rviz
+#  robot_view.rviz
   ${MOC_FILES}
 )
 
