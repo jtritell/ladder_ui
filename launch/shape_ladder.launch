@@ -3,6 +3,6 @@
 <include file="$(find hubo_head_description)/launch/hubo_head_description.launch" />
 <include file="$(find hubo_motion_ros)/launch/hubo_state.launch" />
 <node name="cam_tf_publisher" pkg="tf" type="static_transform_publisher" args="0 0.00 0 0 0 0 Body_NKY turret_tilt_link 100" />
-<node name="ladder_backend" pkg="ladder_shaper" type="fit_ladder" />
+<node name="ladder_backend" pkg="ladder_localization" type="fit_ladder" />
 <node name="ladder_ui" pkg="ladder_ui" type="fitter_interface" />
 </launch>

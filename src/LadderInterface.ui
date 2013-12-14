@@ -57,7 +57,7 @@
        </size>
       </property>
       <property name="visible">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="text">
        <string/>
@@ -77,7 +77,7 @@
       </property>
       <property name="minimumSize">
        <size>
-        <width>250</width>
+        <width>200</width>
         <height>0</height>
        </size>
       </property>
@@ -87,6 +87,9 @@
       <property name="styleSheet">
        <string notr="true">border-width : 0px;
 background-color : none;</string>
+      </property>
+      <property name="visible">
+       <bool>false</bool>
       </property>
       <property name="plainText">
        <string>Walkway Rail Height : 2.72941</string>
@@ -181,6 +184,9 @@ background-color : none;</string>
         <width>10</width>
         <height>16777215</height>
        </size>
+      </property>
+      <property name="visible">
+       <bool>false</bool>
       </property>
       <property name="text">
        <string/>

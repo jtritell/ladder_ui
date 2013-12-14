@@ -18,8 +18,8 @@
 
 void FitterInterface::updateParameters(const ladder_shaper::LadderState::ConstPtr& msg){
     //msg->data;
-    int angle_degrees = msg->direction/M_PI * 180;
-    QString str = QString("X position : %1\nY position : %2\nDirection : %3\nInclination : %4\n"
+    float angle_degrees = msg->direction/M_PI * 180;
+    QString str = QString::fromUtf8("X position : %1\nY position : %2\nDirection : %3°\nInclination : %4°\n"
             "Width : %5\nSpacing : %6\nInitial Spacing : %7\nRail Height : %8\nWalkway Rail Height : %9") \
             .arg(msg->xpos).arg(msg->ypos).arg(angle_degrees) \
             .arg(msg->inclination).arg(msg->legs_width).arg(msg->spacing).arg(msg->spacing_first) \
